@@ -1,4 +1,4 @@
-symfony
+CCE Intranet
 =======
 
-A Symfony project created on March 3, 2016, 1:35 pm.
+Web page of CCE, Symfony based project.
