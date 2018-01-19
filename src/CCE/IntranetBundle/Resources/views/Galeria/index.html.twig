@@ -1,0 +1,180 @@
+{%extends 'IntranetBundle:Default:intranet.html.twig'%}
+
+{% block contenido %}
+    <div class="page-container">
+    <!-- BEGIN PAGE HEADER-->
+
+    <br>           </br>
+    <div class="row col-md-12">
+        <div>
+    {% if is_granted('ROLE_ADMIN')  %}
+            <a href="{{ path('galeria_new') }}" class="btn green pull-right"><i class="fa fa-plus"></i>
+                Insertar foto
+            </a>
+    {% endif %}
+            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="{{ path('intranet_homepage') }}">
+                        Intranet
+                    </a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="{{ path('galeria') }}">
+                        Galería
+                    </a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+
+
+            </ul>
+            <ul>
+
+
+
+
+
+
+            </ul>
+            <!-- END PAGE TITLE & BREADCRUMB-->
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- Begin: life time stats -->
+    <b>
+    </b>
+    <div class="row col-md-6">
+        <div class="portlet box green ">
+            <div class="portlet-title">
+                <div class="caption">
+
+
+
+                </div>
+
+                <div class="caption">
+                    <div class="caption">
+
+
+                    </div>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="container min-hight gallery-page margin-bottom-40">
+
+                    <div class="row">
+
+
+
+                        {% for entity in entities %}
+
+                            <div style="display: block;  opacity: 1;" class="col-md-3 col-sm-4 mix category_1 mix_all">
+
+                                <div class="mix-inner">
+
+                                    <a data-rel="fancybox-button" title="Project Name" href="{{ asset('uploads/images/' ~ entity.rutaFoto) }}"  class="fancybox-button">
+                                        <img alt="" src="{{ asset('uploads/images/' ~ entity.rutaFoto) }}" class="img-responsive">
+                                        
+                                    </a>
+
+
+
+
+                                    <div class="mix-details">
+                            {% if is_granted('ROLE_ADMIN')  %}
+                                        <a class="mix-preview fancybox-button" href="{{ path('galeria_delete', { 'id': entity.id }) }}" title="Galería" data-rel="fancybox-button">
+                                            <i class="fa fa-times">Eliminar</i>
+                                        </a>
+                            {% endif %}
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+
+                        {% endfor %}
+                    </div>
+
+                    <!-- END CONTAINER -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End: life time stats -->
+
+
+
+    </div>
+
+    <div class="container">
+
+
+
+        <div class="clearfix"></div>
+
+
+    </div>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+
+
+    {% block pie %}
+
+        <div style="background: #62707f" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN ABOUT -->
+                        <h2>Acerca de Nosotros</h2>
+                        <p>Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        <div class="clearfix"></div>
+                        <!-- END ABOUT -->
+                    </div>
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN CONTACTS -->
+                        <h2>Contáctenos</h2>
+                        <address>
+                            Empresa de Componentes Electrónicos<br />
+                            Carretera Aereopuerto Alvaro Barba, Km 1.5 <br />
+                            Pinar del Rio, PR 20100. Cuba <br />
+                            P: (+53) 48-762746 <br />
+                            Email: <a href="mailto:mkt@ccepr.co.cu">mkt@ccepr.co.cu</a>
+                        </address>
+                        <!-- END CONTACTS -->
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <!-- BEGIN SUBSCRIBE -->
+                        <h2>Nuestras noticias</h2>
+                        <p>Suscribase a nuestras noticias y permanezca informado acerca de nosotros.</p>
+                        <form action="#" class="form-subscribe">
+                            <div class="input-group input-large">
+                                <input class="form-control" type="text">
+                            <span class="input-group-btn">
+                                <button class="btn theme-btn" type="button">SUSCRIBIR</button>
+                            </span>
+                            </div>
+                        </form>
+                        <!-- END SUBSCRIBE -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+{% endblock %}

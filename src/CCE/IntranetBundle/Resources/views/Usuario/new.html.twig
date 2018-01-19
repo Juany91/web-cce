@@ -1,0 +1,258 @@
+{%extends 'IntranetBundle:Default:intranet.html.twig'%}
+
+{% block contenido %}
+    <div class="page-container">
+        <!-- BEGIN PAGE HEADER-->
+        <div class="row col-md-12">
+            <div class="">
+                <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="{{ path('intranet_homepage') }}">
+                            Intranet
+                        </a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="{{ path('usuario') }}">
+                            Gestionar Usuario
+                        </a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="{{ path('usuario_new') }}">
+                            Usuario Nuevo
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- END PAGE TITLE & BREADCRUMB-->
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- Begin: life time stats -->
+        <!-- END PAGE HEADER-->
+        <!-- Begin: life time stats -->
+
+        <div class="row col-md-4 ">
+        </div>
+        {{ form_start(form) }}
+        <div class="row col-md-5">
+            <div class="portlet box blue ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="glyphicon glyphicon-user"></i>Nuevo Usuario
+                    </div>
+                    <div class="caption">
+                        <div class="caption">
+
+
+                        </div>
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="portlet-body">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="overview_1">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered">
+                                    <tbody>
+
+                                    <tr>
+                                        <th>Nombre</th>
+
+                                        <td>
+                                            {{ form_errors( form.nombre) }}
+                                            {{ form_widget( form.nombre, {'attr' : { 'class' : 'form-control'  , 'type' : 'text' , 'placeholder' : 'Nombre', 'autocomplete' : 'off' , 'name' : 'nombre' } }) }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Apellidos</th>
+                                        <td>
+                                            {{ form_errors( form.apellidos) }}
+                                            {{ form_widget( form.apellidos, {'attr' : { 'class' : 'form-control'  , 'type' : 'text' , 'placeholder' : 'Apellidos', 'autocomplete' : 'off' , 'name' : 'apellidos' } }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Carnet</th>
+                                        <td>
+                                            {{ form_errors( form.carnet) }}
+                                            {{ form_widget( form.carnet, {'attr' : { 'class' : 'form-control'  , 'type' : 'text' , 'placeholder' : 'Carnet', 'autocomplete' : 'off' , 'name' : 'carnet', 'onsubmit':'return valida(this)' } }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dirección</th>
+                                        <td>
+                                            {{ form_errors( form.direccion) }}
+                                            {{ form_widget( form.direccion, {'attr' : { 'class' : 'form-control '  , 'type' : 'text' , 'placeholder' : 'Dirección', 'autocomplete' : 'off' , 'name' : 'direccion' } }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Rol de Empleado</th>
+                                        <td>
+                                            {{form_errors(form.roles)}}
+                                            {{ form_widget(form.roles ,{'attr' : { 'class' : ''  , 'type' : 'checkbox' , 'name' : 'roles'} }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Habilitar Empleado</th>
+                                        <td>
+                                            {{ form_errors( form.enabled) }}
+                                            {{ form_widget( form.enabled, {'attr' : { 'class' : ''  , 'type' : 'checkbox','checked':'true' , 'name' : 'enabled' } }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nombre de Usuario</th>
+                                        <td>
+                                            {{ form_errors( form.username) }}
+                                            {{ form_widget( form.username, {'attr' : { 'class' : 'form-control'  , 'type' : 'text' , 'placeholder' : 'Nombre de Usuario', 'autocomplete' : 'off' , 'name' : 'username' } }) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Correo Electrónico</th>
+                                        <td>
+                                            {{ form_errors( form.email) }}
+                                            {{ form_widget( form.email, {'attr' : { 'class' : 'form-control'  , 'type' : 'text' , 'placeholder' : 'correo', 'autocomplete' : 'off' , 'name' : 'email' } }) }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Contraseña</th>
+                                        <td>
+                                            {{ form_errors( form.plainPassword.first) }}
+                                            {{ form_widget( form.plainPassword.first, {'attr' : { 'class' : 'form-control'  ,'id':'Passw1', 'type' : 'password' , 'placeholder' : 'Contraseña', 'autocomplete' : 'off' , 'name' : 'password' } }) }}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Repetir Contraseña</th>
+                                        <td>
+                                            {{ form_errors( form.plainPassword.second) }}
+                                            {{ form_widget( form.plainPassword.second, {'attr' : { 'class' : 'form-control'  , 'type' : 'password' , 'placeholder' : 'Contraseña', 'autocomplete' : 'off' , 'name' : 'password' } }) }}
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <td>
+                                    <div class="row col-md-offset-8">
+
+                                        <ul >
+                                            <div class="-align-justify">
+                                                {{ form_start(form) }}
+                                                {{ form_widget(form.submit,{'attr':{'class':'btn blue '}}) }}
+                                                {{ form_end(form) }}
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </td>
+                                </tr>
+
+
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+        <!-- End: life time stats -->
+
+
+
+        <ul>
+
+        </ul>
+    </div>
+
+    <script language="javascript">
+        function passwordChanged() {
+            var strength = document.getElementById('Passw1');
+            var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).*$", "g");
+            var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+            var pwd = document.getElementById("Passw1");
+            if (pwd.value.length == 0) {
+                strength.innerHTML = 'Contraseña';
+            } else if (false == enoughRegex.test(pwd.value)) {
+                strength.innerHTML = 'Más Caracteres';
+            } else if (strongRegex.test(pwd.value)) {
+                strength.innerHTML = '<span style="color:green">Fuerte!</span>';
+            } else if (mediumRegex.test(pwd.value)) {
+                strength.innerHTML = '<span style="color:orange">Media!</span>';
+            } else {
+                strength.innerHTML = '<span style="color:red">Débil!</span>';
+            }
+        }</script>
+
+
+
+    <div class="container">
+
+
+
+        <div class="clearfix"></div>
+
+
+    </div>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+
+
+    {% block pie %}
+
+        <div style="background: #62707f" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN ABOUT -->
+                        <h2>Acerca de Nosotros</h2>
+                        <p>Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        <div class="clearfix"></div>
+                        <!-- END ABOUT -->
+                    </div>
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN CONTACTS -->
+                        <h2>Contáctenos</h2>
+                        <address>
+                            Empresa de Componentes Electrónicos<br />
+                            Carretera Aereopuerto Alvaro Barba, Km 1.5 <br />
+                            Pinar del Rio, PR 20100. Cuba <br />
+                            P: (+53) 48-762746 <br />
+                            Email: <a href="mailto:mkt@ccepr.co.cu">mkt@ccepr.co.cu</a>
+                        </address>
+                        <!-- END CONTACTS -->
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <!-- BEGIN SUBSCRIBE -->
+                        <h2>Nuestras noticias</h2>
+                        <p>Suscribase a nuestras noticias y permanezca informado acerca de nosotros.</p>
+                        <form action="#" class="form-subscribe">
+                            <div class="input-group input-large">
+                                <input class="form-control" type="text">
+                            <span class="input-group-btn">
+                                <button class="btn theme-btn" type="button">SUSCRIBIR</button>
+                            </span>
+                            </div>
+                        </form>
+                        <!-- END SUBSCRIBE -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+
+{% endblock %}

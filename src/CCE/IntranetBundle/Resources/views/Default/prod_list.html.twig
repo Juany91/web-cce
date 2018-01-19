@@ -1,0 +1,13 @@
+
+{% for article in articles %}
+    <h3>{{ article.nombre }}</h3>
+<ul>
+    {% for item in productos %}
+        {% if item.idueb.id == article.id %}
+        <li><a href="/producto/{{ item.id }}/show">{{item.nombre  }}</a></li>
+            {% endif %}
+        {% endfor %}
+</ul>
+
+
+{% endfor %}

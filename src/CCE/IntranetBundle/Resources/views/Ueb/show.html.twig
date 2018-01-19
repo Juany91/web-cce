@@ -1,0 +1,184 @@
+{%extends 'IntranetBundle:Default:intranet.html.twig'%}
+
+{% block contenido %}
+
+    <div class="page-container">
+        <!-- BEGIN PAGE HEADER-->
+        <div class="row col-md-12">
+            <div class="">
+                <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="{{ path('intranet_homepage') }}">
+                            Intranet
+                        </a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="{{ path('ueb') }}">
+                            Gestionar UEB
+                        </a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="{{ path('ueb_show', { 'id': entity.id}) }}">
+                            UEB
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- END PAGE TITLE & BREADCRUMB-->
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- Begin: life time stats -->
+
+        <div class="row col-md-12">
+            <div class="portlet box green ">
+                <div class="portlet-title">
+
+                    <div class="caption">
+                        <div class="caption">
+
+
+                        </div>
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="portlet-body">
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="overview_1">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-bordered">
+                                    <tbody>
+                                    <div class="col-md-8 col-sm-4">
+                                        <h2>{{ entity.nombre }}</h2>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4">
+                                    <img class="img-responsive" src="{{ asset('uploads/images/' ~ entity.rutaFoto) }}" alt="">
+                                    </div>
+                                    <div class="col-md-12 col-sm-4">
+                                        <h2>Descripción</h2>
+                                        <p>{{ entity.descripcion }}</p>
+
+                                    </div>
+
+
+
+
+                                    </tbody>
+                                </table>
+
+
+
+
+
+
+
+
+
+
+                                {% if is_granted('ROLE_ADMIN')  %}
+                                    <td>
+                                        <div class="-align-justify">
+                                            <div class="caption pull-rigth">
+                                                {{ form_start(delete_form) }}
+
+                                                {{ form_widget(delete_form.submit,{'attr':{'class':'btn red '}}) }}
+                                                {{ form_end(delete_form) }}
+                                            </div>
+                                        </div>
+                                    </td>
+                                {% endif %}
+                                </tr>
+
+
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+
+
+
+        <ul>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <div class="container">
+
+
+
+        <div class="clearfix"></div>
+
+
+    </div>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+    <br>  </br>
+
+
+    {% block pie %}
+
+        <div style="background: #62707f" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN ABOUT -->
+                        <h2>Acerca de Nosotros</h2>
+                        <p>Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        <div class="clearfix"></div>
+                        <!-- END ABOUT -->
+                    </div>
+                    <div class="col-md-4 col-sm-4 space-mobile">
+                        <!-- BEGIN CONTACTS -->
+                        <h2>Contáctenos</h2>
+                        <address>
+                            Empresa de Componentes Electrónicos<br />
+                            Carretera Aereopuerto Alvaro Barba, Km 1.5 <br />
+                            Pinar del Rio, PR 20100. Cuba <br />
+                            P: (+53) 48-762746 <br />
+                            Email: <a href="mailto:mkt@ccepr.co.cu">mkt@ccepr.co.cu</a>
+                        </address>
+                        <!-- END CONTACTS -->
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <!-- BEGIN SUBSCRIBE -->
+                        <h2>Nuestras noticias</h2>
+                        <p>Suscribase a nuestras noticias y permanezca informado acerca de nosotros.</p>
+                        <form action="#" class="form-subscribe">
+                            <div class="input-group input-large">
+                                <input class="form-control" type="text">
+                            <span class="input-group-btn">
+                                <button class="btn theme-btn" type="button">SUSCRIBIR</button>
+                            </span>
+                            </div>
+                        </form>
+                        <!-- END SUBSCRIBE -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+{% endblock %}

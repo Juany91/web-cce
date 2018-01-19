@@ -1,0 +1,43 @@
+intranet_proyecto:
+    resource: "@IntranetBundle/Resources/config/routing/proyecto.yml"
+    prefix:   /proyecto
+
+intranet_ueb:
+    resource: "@IntranetBundle/Resources/config/routing/ueb.yml"
+    prefix:   /ueb
+
+intranet_producto:
+    resource: "@IntranetBundle/Resources/config/routing/producto.yml"
+    prefix:   /producto
+
+intranet_usuario:
+    resource: "@IntranetBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
+intranet_noticias:
+    resource: "@IntranetBundle/Resources/config/routing/noticias.yml"
+    prefix:   /noticias
+
+intranet_galeria:
+    resource: "@IntranetBundle/Resources/config/routing/galeria.yml"
+    prefix:   /galeria
+
+empresa_usuario:
+    resource: "@IntranetBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /
+
+fos_user_change_password:
+    path:     /camb_cont
+    defaults: { _controller: "FOSUserBundle:ChangePassword:changePassword" }
+
+fos_user_profile_show:
+    path:   /intranet
+    defaults: { _controller: "IntranetBundle:Default:intranet" }
+
+intranet_homepage:
+     path:     /
+     defaults: { _controller: IntranetBundle:Default:intranet }

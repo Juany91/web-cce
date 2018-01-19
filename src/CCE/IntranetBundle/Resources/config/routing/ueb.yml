@@ -1,0 +1,30 @@
+ueb:
+    path:     /
+    defaults: { _controller: "IntranetBundle:Ueb:index" }
+
+ueb_show:
+    path:     /{id}/show
+    defaults: { _controller: "IntranetBundle:Ueb:show" }
+
+ueb_new:
+    path:     /new
+    defaults: { _controller: "IntranetBundle:Ueb:new" }
+
+ueb_create:
+    path:     /create
+    defaults: { _controller: "IntranetBundle:Ueb:create" }
+    methods:  POST
+
+ueb_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IntranetBundle:Ueb:edit" }
+
+ueb_update:
+    path:     /{id}/update
+    defaults: { _controller: "IntranetBundle:Ueb:update" }
+    methods:  [POST, PUT]
+
+ueb_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IntranetBundle:Ueb:delete" }
+    methods:  [POST, DELETE]

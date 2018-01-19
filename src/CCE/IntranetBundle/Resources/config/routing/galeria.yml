@@ -1,0 +1,30 @@
+galeria:
+    path:     /
+    defaults: { _controller: "IntranetBundle:Galeria:index" }
+
+galeria_show:
+    path:     /{id}/show
+    defaults: { _controller: "IntranetBundle:Galeria:show" }
+
+galeria_new:
+    path:     /new
+    defaults: { _controller: "IntranetBundle:Galeria:new" }
+
+galeria_create:
+    path:     /create
+    defaults: { _controller: "IntranetBundle:Galeria:create" }
+    methods:  POST
+
+galeria_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IntranetBundle:Galeria:edit" }
+
+galeria_update:
+    path:     /{id}/update
+    defaults: { _controller: "IntranetBundle:Galeria:update" }
+    methods:  [POST, PUT]
+
+galeria_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IntranetBundle:Galeria:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,4 @@
+{% for article in articles %}
+    <a href="{{ path('ueb_show', {'slug': article.id}) }}">{{ article.name }}</a>
+    </a>
+{% endfor %}

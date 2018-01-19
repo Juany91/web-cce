@@ -1,0 +1,30 @@
+noticias:
+    path:     /
+    defaults: { _controller: "IntranetBundle:Noticias:index" }
+
+noticias_show:
+    path:     /{id}/show
+    defaults: { _controller: "IntranetBundle:Noticias:show" }
+
+noticias_new:
+    path:     /new
+    defaults: { _controller: "IntranetBundle:Noticias:new" }
+
+noticias_create:
+    path:     /create
+    defaults: { _controller: "IntranetBundle:Noticias:create" }
+    methods:  POST
+
+noticias_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IntranetBundle:Noticias:edit" }
+
+noticias_update:
+    path:     /{id}/update
+    defaults: { _controller: "IntranetBundle:Noticias:update" }
+    methods:  [POST, PUT]
+
+noticias_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IntranetBundle:Noticias:delete" }
+    methods:  [POST, DELETE]

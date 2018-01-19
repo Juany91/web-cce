@@ -1,0 +1,21 @@
+
+
+
+{% for article in articles|slice(0, 3) %}
+    <div class="row">
+    <div class="col-xs-12">
+
+    <li> <h2><a href="/noticias/{{ article.id }}/show">
+        {{ article.titulo }}</h2></li>
+    </a>
+        <ul class="blog-info">
+            <li><i class="fa fa-calendar"></i> {{ article.fecha }}</li>
+            <li><i class="fa fa-newspaper-o"></i> Fuente: <a href="{{ article.dirfuente }}">{{ article.fuente }}</a></li>
+            <p>{{ article.descripcion | truncate(500, true) }}</p>
+            <a class="more" href="/noticias/{{ article.id }}/show">Leer mas <i class="icon-angle-right"></i></a>
+        </ul>
+
+
+    </div>
+    </div>
+{% endfor %}

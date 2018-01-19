@@ -1,0 +1,30 @@
+producto:
+    path:     /
+    defaults: { _controller: "IntranetBundle:Producto:index" }
+
+producto_show:
+    path:     /{id}/show
+    defaults: { _controller: "IntranetBundle:Producto:show" }
+
+producto_new:
+    path:     /new
+    defaults: { _controller: "IntranetBundle:Producto:new" }
+
+producto_create:
+    path:     /create
+    defaults: { _controller: "IntranetBundle:Producto:create" }
+    methods:  POST
+
+producto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IntranetBundle:Producto:edit" }
+
+producto_update:
+    path:     /{id}/update
+    defaults: { _controller: "IntranetBundle:Producto:update" }
+    methods:  [POST, PUT]
+
+producto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IntranetBundle:Producto:delete" }
+    methods:  [POST, DELETE]

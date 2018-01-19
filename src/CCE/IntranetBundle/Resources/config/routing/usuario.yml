@@ -1,0 +1,30 @@
+usuario:
+    path:     /
+    defaults: { _controller: "IntranetBundle:Usuario:index" }
+
+usuario_show:
+    path:     /{id}/show
+    defaults: { _controller: "IntranetBundle:Usuario:show" }
+
+usuario_new:
+    path:     /new
+    defaults: { _controller: "IntranetBundle:Usuario:new" }
+
+usuario_create:
+    path:     /create
+    defaults: { _controller: "IntranetBundle:Usuario:create" }
+    methods:  POST
+
+usuario_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IntranetBundle:Usuario:edit" }
+
+usuario_update:
+    path:     /{id}/update
+    defaults: { _controller: "IntranetBundle:Usuario:update" }
+    methods:  [POST, PUT]
+
+usuario_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IntranetBundle:Usuario:delete" }
+    methods:  [POST, DELETE]
